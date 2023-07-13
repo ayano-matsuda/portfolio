@@ -1,0 +1,31 @@
+
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0px;
+    }
+    .contents{
+        display: grid;
+        grid-template-columns: 1fr 1160px 1fr;
+        grid-template-rows: 50px 600px 1fr 200px;
+        grid-template-areas:
+            "menubar menubar menubar"
+            "header header header"
+            ". main ."
+            "footer footer footer";
+
+    }
+    .menubar {
+        grid-area: menubar;
+    }
+    header {
+        grid-area: header;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        grid-area: footer;
+    }
+    
