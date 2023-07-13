@@ -57,7 +57,23 @@
     .trending-child {
         width: 360px;
         height: 350px;
+        display: grid;
+        grid-template-areas:
+            "trending-child-img" "trending-child-h3" "trending-child-p" "trending-child-time";
     }
+    .trending-child h3 {
+        grid-area: trending-child-h3
+    }
+    .trending-child img {
+        grid-area: trending-child-img
+    }
+    .trending-child p {
+        grid-area: trending-child-p
+    }
+    .trending-child .time {
+        grid-area: trending-child-time
+    }
+
     .happening-now-content {
         display: flex;
         justify-content: space-between;
@@ -77,6 +93,7 @@
     .happening-now-smallchilds {
         width: 360px;
     }
+
     .happening-now-bigchild {
         height: 430px;
         margin-bottom: 40px;
