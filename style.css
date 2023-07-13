@@ -6,6 +6,7 @@
         margin: 0px;
     }
     .contents{
+        background-color: blue;
         display: grid;
         grid-template-columns: 1fr 1160px 1fr;
         grid-template-rows: 50px 600px 1fr 200px;
@@ -16,16 +17,65 @@
             "footer footer footer";
 
     }
+    h1{
+        font-size: 16px;
+        float: left;
+    }
+    .menuber nav {
+        float: right;
+    }
     .menubar {
+        background-color: green;
         grid-area: menubar;
     }
     header {
+        background-color: orange;
         grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 600px;
+        grid-template-areas:
+            "worldnews morenews"
+    }
+    .worldnews {
+        grid-area: worldnews;
+    }
+    .morenews {
+        grid-area: morenews;
     }
     main {
+        background-color: skyblue;
         grid-area: main;
     }
+    .trending-content{
+        display:flex;
+        justify-content: space-between;
+
+    }
+    .trending-child {
+        width: 360px;
+        height: 350px;
+    }
+    .happening-now-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .happening-now-bigchilds {
+        width: 760px;
+    }
+    .happening-now-smallchilds {
+        width: 360px;
+    }
+    .happening-now-bigchild {
+        height: 430px;
+        margin-bottom: 40px;
+    }
+    .happening-now-smallchild {
+        height: 273px;
+        margin-bottom: 40px;
+    }
+
     footer {
+        background-color: purple;
         grid-area: footer;
     }
-    
