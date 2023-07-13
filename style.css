@@ -38,6 +38,9 @@
     }
     .worldnews {
         grid-area: worldnews;
+        background-image: url(img/kojou.png);
+        background-position: center;
+        background-size: max(100%,1280px);
     }
     .morenews {
         grid-area: morenews;
@@ -62,7 +65,15 @@
     }
     .happening-now-bigchilds {
         width: 760px;
+        background-position: center;
     }
+    .hn-big1 {
+        background-image: url(img/kojou.png);
+    }
+    .hn-big2 {
+        background-image: url(img/kojou.png);
+    }
+
     .happening-now-smallchilds {
         width: 360px;
     }
