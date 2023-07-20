@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Iceland);
+
+body {
+    background-color: rgba(24, 24, 24, .7);
+    color: #fff;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#digital_clock {
+    font-family: "Iceland";
+    font-size: 25px;
+    line-height: 40px;
+    margin-top: 9px;
+    text-align: 9px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
