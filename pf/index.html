@@ -8,21 +8,49 @@
 </head>
 <body>
     <header>
+        <div id="menubar-mobile">
+            <div class="nav">
+
+                <!-- ハンバーガーメニューの表示・非表示を切り替えるチェクボックス -->
+                <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+                <!-- ハンバーガーアイコン -->
+                <label for="drawer_input" class="drawer_open"><span></span></label>
+
+                <!-- メニュー -->
+                <nav class="nav_content">
+                    <ul class="nav_list">
+                        <li class="nav_item"><a href="">Home</a></li>
+                        <li class="nav_item"><a href="">AboutMe</a></li>
+                        <li class="nav_item"><a href="">Application</a></li>
+                        <li class="nav_item"><a href="">Programming</a></li>
+                        <li class="nav_item"><a href="">Graphic</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
         <div id="menubar">
-            <div id="logo"><img src="./img/Hot-Men-Hairstyles-2017.png"></div>
+            <div id="logo"><a href="index.html"><img src="./img/Hot-Men-Hairstyles-2017.png"></a></div>
             <div id="menu">
                 <ul>
-                    <li><a href="">aboutme</a></li>
-                    <li><a href="">application</a></li>
-                    <li><a href="">programming</a></li>
-                    <li><a href="">graphic</a></li>
+                    <li><a href="aboutme.html">aboutme</a></li>
+                    <li><a href="application.html">application</a></li>
+                    <li><a href="programming.html">programming</a></li>
+                    <li><a href="graphic.html">graphic</a></li>
                 </ul>
             </div>
-            <div id="contact"></div>
+            <div id="contact"><button>contact</button></div>
         </div>
         <div id="header-catch">
             <div id="header-catch-img"><img src="./img/AdobeStock_416026622.png"></div>
-            <div id="header-catch-text">Ayano Matsuda Designs</div>
+            <div id="header-catch-text">
+                Ayano Matsuda Designs
+                <h2>A thoughtful <br>approach for <br>creating the <br>perfect space.</h2>
+                <p>My Portfolio</p>
+                <button>VIEW MY WORK</button>
+            </div>
         </div>
     </header>
     <main>

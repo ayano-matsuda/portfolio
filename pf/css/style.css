@@ -4,10 +4,12 @@
     --secondary-bg: #FFF9ED;
     --primary-color: white;
     --secondary-color: #54AFB7;
+    --teritiary-color: #454141;
     --padding-default: 24px;
     --padding-narrow: 12px;
-    --padding-fotter: 
+    --padding-fotter: 60px;
 }
+
 /* body リセット */
 body {
     margin: 0px;
@@ -15,16 +17,35 @@ body {
 img {
     width: 100%;
 }
+bottom {
+    font-size: 8px;
+    font-weight: bold;
+    padding: 8px;
+}
 
 /* header */
 header {
-    color: ver(--primary-color);
-    background-color: ver(--primary-bg);
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
     padding: var(--padding-default);
 }
 #logo {
     width: 195px;
 }
+@media(min-width: 768px){
+    #header-catch {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #header-catch-img,#header-catch-text {
+        padding: 5%;
+    }
+}
+
+#header-simple{
+    text-align: center;
+}
+
 
 /* main */
 main {
@@ -33,6 +54,17 @@ main {
 main #main-about {
     color: var(--secondary-color);
     background-color: var(--secondary-bg);
+    padding: var(--padding-default);
+}
+main #main-latestwork {
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+}
+main #main latestwork-title {
+    padding: var(--padding-default);
+}
+main #main latestwork-images {
+    padding: var(--padding-narrow);
 }
 main #main-images{
     display: flex;
@@ -41,16 +73,63 @@ main #main-images{
 main #main-images img{
     width: 50%;
 }
-
-#main latestwork-title {
+#main-aboutme {
+    color: var(--secondary-color);
+    background-color: var(--secondary-bg);
     padding: var(--padding-default);
 }
-#main latestwork-images {
-    padding: var(--padding-narrow);
+#main-portfolio{
+    color: var(--secondary-color);
+    background-color: var(--secondary-bg);
+    padding: var(--padding-default);
+}
+#main-portfolio-images{
+    color: var(--primary-color);
+}
+#main-work{
+    color: var(--secondary-color);
+    background-color: var(--secondary-bg);
+    padding: var(--padding-default);
+}
+
+@media(min-width: 768px){
+    #main-about {
+        display: flex;
+    }
+    #main-about-image,#main-about-text {
+        padding: 10%;
+    }
+    #main-latestwork-images {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-latestwork {
+        flex-basis: 33%;
+    }
+    main #main-images{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    main #main-images img{
+        width: 16%;
+    }
+
+    #main-aboutme-text{
+        padding: 20%;
+    }
+    #main-portfolio-images{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .main-portfolio-image {
+        width: 30%;
+    }
 }
 
 /* work-card */
-.main-latestwork {
+.main-latestwork,
+.main-portfolio-image {
     position: relative;
 }
 .work-genre, .work-title {
@@ -77,8 +156,8 @@ footer {
     color: var(--primary-color);
     background-color: var(--primary-bg);
     font-size: 12px;
-    padding-left: var(--paddingfooter);
-    padding-right: var(--paddingfooter);
+    padding-left: var(--padding-footer);
+    padding-right: var(--padding-footer);
 }
 footer hr {
     border-color: rgba(255,255,255,0.2);
@@ -94,7 +173,7 @@ footer hr {
 }
 .footer-menu-title {
     color: var(--teritiary-color);
-    margin-bottom: 8px;
+    margin-bottom: 24px;
 }
 .footer-menu-item {
     margin-bottom: 8px;
@@ -112,43 +191,7 @@ footer hr {
 #footer-sub{
     text-align: center;
     font-size: 9px;
-    padding-bottom:var(--padding-narrow)
-}
-
-
-/* レスポンシブ対応 */
-
-@media(min-width: 768px){
-    #header-catch {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-    #header-catch-img,#header-catch-text {
-        padding: 5%;
-    }
-}
-
-@media(min-width: 768px){
-    #main-about {
-        display: flex;
-    }
-    #main-about-image,#main-about-text {
-        padding: 10%;
-    }
-    #main-latestwork-images{
-        display: flex;
-        justify-content: space-between;
-    }
-    .main-latestwork {
-        flex-basis: 33%;
-    }
-    main #main-images{
-        flex-wrap: nawrap;
-        justify-content: space-between;
-    }
-    main #main-images img{
-        width: 16%;
-    }
+    padding-bottom: var(--padding-narrow);
 }
 
 @media(min-width: 768px){
@@ -156,4 +199,173 @@ footer hr {
         display: flex;
         justify-content: space-between;
     }
+}
+
+/* メニュー */
+header{
+    position: relative;
+}
+#menubar-mobile{
+    display: block;
+    position: absolute;
+    top: 0px;
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+#menubar-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.nav {
+    margin-right: 40px;
+}
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線の一番上の位置調整 */
+.drawer_open span:before {
+    bottom: 8px;
+}
+
+/* 三本線の一番下の位置調整 */
+.drawer_open span:after {
+    top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+    background: rgba(255,255,255,0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になるように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* メニューのデザイン */
+.nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    transition: .5s;
+}
+.nav_content a,
+.nav_content a:link,
+.nav_content a:hover,
+.nav_content a:active {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+    list-style: none;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+    left: 0;/* メニューを画面に入れる */
+}
+
+#menubar #menu, #menubar #content {
+    display: none;
+}
+@media(min-width: 768px){
+    #menubar #menu, #menubar #content {
+        display:block;
+    }
+    
+    #menubar-mobile{
+        display: none;
+    }
+    #menubar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+    #menu ul{
+        display: flex;
+    }
+    #menu ul li {
+        list-style-type: none;
+        margin-right: 40px;
+    }
+    #menu a,
+    #menu a:link,
+    #menu a:visited,
+    #menu a:hover{
+        color: white;
+        text-decoration: none;
+    }
+}
+.footer-menu-item a,
+.footer-menu-item a:link,
+.footer-menu-item a:visited,
+.footer-menu-item a:hover{
+    color: white;
+    text-decoration: none;
+}
+#main-portfolio li{
+    list-style-type: none;
+}
+#main-portfolio a,
+#main-portfolio a:link,
+#main-portfolio a:visited,
+#main-portfolio a:hover{
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+
+/* iframe */
+#main-work {
+    width: 100%;
+    padding: 0px;
+    aspect-ratio: 16 / 9;
+    padding-bottom: 24px;
+}
+#main-work iframe {
+    width: 100%;
+    height: 100%;
 }
