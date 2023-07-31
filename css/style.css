@@ -15,7 +15,12 @@
 /* body リセット */
 body {
     margin: 0px;
+    padding: 0px;
 }
+.wrap {
+	overflow: hidden;
+}
+
 img {
     width: 100%;
 }
@@ -33,23 +38,33 @@ header {
     background-color: var(--primary-bg);
     padding: var(--padding-default);
 }
-#logo {
+#logo img {
+    border-radius: 50%;
     height: 30px;
     width: 30px;
     margin-top: -5px;
     margin-bottom: 20px;
 }
+
+
 #header-catch-img {
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 @media(min-width: 768px){
     #header-catch {
         display: flex;
         flex-direction: row-reverse;
     }
-    #header-catch-img,#header-catch-text {
+    #header-catch-img {
         padding: 5%;
     }
+    #header-catch-text {
+        padding: 5%;
+        padding-right: 0%;
+        width: 150%;
+    }
+
 }
 
 #header-simple{
@@ -78,6 +93,7 @@ main #main-latestwork {
     padding: var(--padding-default);
 }
 main #main latestwork-title {
+    color: var(--teritiary-color);
     padding: var(--padding-default);
 }
 main #main latestwork-images {
@@ -91,6 +107,8 @@ main #main-images{
 }
 main #main-images img{
     width: 50%;
+    object-fit: cover;
+    box-shadow: 1px 1px 3px gray;
 }
 #main-aboutme {
     color: var(--secondary-color);
@@ -119,8 +137,13 @@ main #main-latestwork, main #main-images {
     #main-about {
         display: flex;
     }
-    #main-about-image,#main-about-text {
+    #main-about-image {
         padding: 10%;
+        width: 50%;
+        }
+    #main-about-text {
+        padding: 10%;
+        width: 150%;
     }
     #main-latestwork-images {
         display: flex;
@@ -168,9 +191,12 @@ main #main-latestwork, main #main-images {
     font-size: 12px;
     padding: 4px 24px;
     border-radius: 24px;
+    box-shadow: 1px 1px 3px gray;
+
 }
 .work-title {
-    text-shadow: 1px 1px 3px gray;
+    color: var(--primary-color);
+    text-shadow: 3px 2px 6px gray;
     bottom: 24px;
     left: 12px;
     font-weight: bold;
@@ -195,10 +221,11 @@ footer hr {
     font-weight: bold;
     margin-bottom: 24px;
     color: var(--teritiary-color)
-
 }
 .footer-menu {
     margin: 36px;
+    font-weight: bold;
+
 }
 .footer-menu-title {
     color: var(--teritiary-color);
@@ -206,6 +233,7 @@ footer hr {
 }
 .footer-menu-item {
     margin-bottom: 8px;
+    font-weight: normal;
 }
 #footer-sns {
     margin-bottom: 24px;
